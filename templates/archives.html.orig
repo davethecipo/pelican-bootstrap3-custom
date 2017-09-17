@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+<<<<<<< HEAD
+{% block title %}{% trans }Archives{% endtrans %} - {{ SITENAME }}{% endblock %}
+=======
+{% block title %}{{ gettext('Archives') }} - {{ SITENAME }}{% endblock %}
+>>>>>>> fix-static-paths
+{% block breadcrumbs %}
+    {% if DISPLAY_BREADCRUMBS %}
+    <ol class="breadcrumb">
+        <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
+<<<<<<< HEAD
+        <li class="active">{% trans }Archives{% endtrans %}</li>
+=======
+        <li class="active">{% trans %}Archives{% endtrans %}</li>
+>>>>>>> fix-static-paths
+    </ol>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <section id="content">
+<<<<<<< HEAD
+        <h1>{% trans }Archives{% endtrans %} {% trans }for{% endtrans %} {{ SITENAME }}</h1>
+=======
+        <h1>{% trans %}Archives for{% endtrans %}  {{ SITENAME }}</h1>
+>>>>>>> fix-static-paths
+        <div id="archives">
+            {% for article in dates %}
+                <p>
+                    <span class="categories-timestamp"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span>
+                    <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}{% if article.subtitle %} - {{ article.subtitle }}{% endif %}</a>
+                </p>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

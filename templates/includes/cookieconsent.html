@@ -1,0 +1,16 @@
+{% if COOKIECONSENT %}
+    <!-- Begin Cookie Consent -->
+    <script>
+        window.cookieconsent_options = {
+            message: "{% trans %}This website uses cookies to ensure you get the best experience on our website.{% endtrans %}",
+learnMore: "{% trans %}More info{% endtrans %}",
+link: "{{ COOKIECONSENT_MORE_INFO_URL|default('http://cookielawinfo.com/about/') }}",
+{% if COOKIECONSENT_DISMISS %}
+dismiss: '{{ COOKIECONSENT_DISMISS }}',
+{% endif %}
+theme: '{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/cookieconsent2/{{ COOKIECONSENT_THEME|default('dark-top') }}.css',
+        };
+    </script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/cookieconsent.min.js"></script>
+    <!-- End Cookie Consent -->
+{% endif %}

@@ -1,0 +1,14 @@
+{% if article.related_posts %}
+<section class="well" id="related-posts">
+<<<<<<< HEAD
+    <h4>{{ RELATED_POSTS_TEXT|default('Related posts:') }}</h4>
+=======
+    <h4> {% trans %}Related Posts{% endtrans %}:</h4>
+>>>>>>> fix-static-paths
+    <ul>
+    {% for related_post in article.related_posts %}
+        <li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
+    {% endfor %}
+    </ul>
+</section>
+{% endif %}
